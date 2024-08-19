@@ -1,0 +1,462 @@
+@import "../../theme.scss";
+
+#ClientViewer {
+    // Default Styles -----
+    background-color: $black_01;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    // Default Styles -----
+
+    #backgroundContainer {
+        overflow: hidden;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+
+        #backgroundAuxiliar {
+            height: calc(100vh + 50px);
+            width: calc(100vw + 240px);
+            position: absolute;
+            aspect-ratio: 4/3;
+            left: 0;
+            top: 0;
+
+            * {
+                object-position: -240px -50px;
+                opacity: .5;
+            }
+        }
+    }
+
+    #content {
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        top: 0;
+
+        #home {
+            padding: 90px 32px 76px;
+            flex-direction: column;
+            height: 100vh;
+            display: flex;
+            width: 100vw;
+
+            #homeLink {
+                background-color: $blue_01;
+                text-decoration: none;
+                border-radius: 6px;
+                font-size: $f5 + 2;
+                width: max-content;
+                padding: 8px 16px;
+                font-weight: 700;
+                color: $black_01;
+                margin: 0;
+            }
+
+            h3 {
+                margin: 24px 0 8px;
+                color: $white_01;
+                font-weight: 400;
+                font-size: $f4;
+            }h1 {
+                color: $white_01;
+                font-weight: 700;
+                font-size: $f1;
+                margin: 0;
+            }h2 {
+                color: $white_02;
+                font-weight: 700;
+                margin: 8px 0 0;
+                font-size: $f3;
+            }
+
+            #scrollIndicator {
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: column;
+                display: flex;
+                flex: 1;
+
+                p {
+                    font-size: $f5 + 2;
+                    font-weight: 600;
+                    color: $white_01;
+                    margin: 0 0 -4px;
+                }
+            }
+        }
+
+        #details {
+            background-color: $black_01;
+            flex-direction: column;
+            padding-bottom: 142px;
+            min-height: 100vh;
+            display: flex;
+
+            #upArrowBtn {
+                background-color: $blue_01;
+                justify-content: center;
+                margin: 32px 32px 24px;
+                align-items: center;
+                border-radius: 50%;
+                display: flex;
+                height: 32px;
+                width: 32px;
+            }
+
+            header {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                padding: 0 32px;
+                display: flex;
+
+                #tagCategory {
+                    background-color: $blue_01;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 4px;
+                    width: max-content;
+                    padding: 6px 12px;
+                    display: flex;
+
+                    h4 {
+                        color: $black_01;
+                        font-weight: 700;
+                        font-size: $f6;
+                        margin: 0;
+                    }
+                }
+
+                h2 {
+                    margin: 12px 0 2px;
+                    font-weight: 600;
+                    color: $white_01;
+                    font-size: $f3;
+                }
+
+                #locationText {
+                    font-weight: 300;
+                    color: $gray_01;
+                    font-size: $f6;
+                    margin: 0;
+
+                    a {
+                        text-decoration: underline;
+                        margin-left: 4px;
+                        color: $blue_01;
+                        font-size: $f7;
+                    }
+                }
+                #timePending {
+                    font-weight: 500;
+                    color: $white_01;
+                    font-size: $f7;
+                    margin: 4px 0;
+                }
+
+                #review {
+                    justify-content: flex-start;
+                    align-items: center;
+                    display: flex;
+                    gap: 1px;
+                }
+            }
+
+            #index {
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 24px;
+                padding: 0 32px;
+                display: flex;
+                gap: 8px;
+
+                .indexOption {
+                    border-bottom-right-radius: 12px;
+                    justify-content: space-between;
+                    border: 1px solid $blue_03_15;
+                    border-top-left-radius: 12px;
+                    text-decoration: none;
+                    align-items: center;
+                    padding: 16px;
+                    display: flex;
+                    width: 100%;
+
+                    .indexOption1 {
+                        justify-content: flex-start;
+                        align-items: center;
+                        display: flex;
+
+                        p {
+                            margin: 2px 0 0 4px;
+                            font-weight: 500;
+                            color: $white_01;
+                            font-size: $f4;
+                        }
+                    }
+                }
+            }
+
+            #about {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: 24px;
+                padding: 0 24px;
+                display: flex;
+
+                h3 {
+                    color: $white_01;
+                    font-weight: 500;
+                    font-size: $f3;
+                    margin: 0 8px;
+                }
+
+                p {
+                    color: $white_02;
+                    font-weight: 300;
+                    font-size: $f5;
+                    margin: 4px 8px 0;
+                }
+
+                #carrousel {
+                    border: 1px solid $blue_03_15;
+                    border-radius: 12px;
+                    aspect-ratio: 3/2;
+                    margin-top: 32px;
+                    overflow: hidden;
+                    width: 100%;
+                }
+            }
+
+            #priceservices {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: 32px;
+                padding: 0 32px;
+                display: flex;
+
+                h3 {
+                    font-weight: 500;
+                    margin: 0 0 12px;
+                    color: $white_01;
+                    font-size: $f3;
+                }
+
+                #itemsContainer {
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    gap: 18px;
+
+                    .serviceItem {
+                        justify-content: space-between;
+                        align-items: center;
+                        display: flex;
+                        width: 100%;
+
+                        .serviceItem1 {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            .serviceItemIcon {
+                                justify-content: center;
+                                align-items: center;
+                                margin-left: -8px;
+                                display: flex;
+                            }
+
+                            .serviceItem2 {
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: flex-start;
+                                display: flex;
+
+                                .itemTitle {
+                                    color: $white_01;
+                                    font-weight: 500;
+                                    font-size: $f5;
+                                    margin: 0;
+                                }
+                                .itemTime {
+                                    color: $white_02;
+                                    font-weight: 300;
+                                    font-size: $f7;
+                                    margin: 0;
+                                }
+                            }
+                        }
+
+                        .itemPrice {
+                            font-weight: 700;
+                            color: $blue_01;
+                            font-size: $f5;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            #schedules {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: 32px;
+                padding: 0 32px;
+                display: flex;
+
+                h3 {
+                    font-weight: 500;
+                    margin: 0 0 12px;
+                    color: $white_01;
+                    font-size: $f3;
+                }
+
+                #itemsContainer {
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    gap: 12px;
+
+                    .scheduleItem {
+                        justify-content: space-between;
+                        align-items: center;
+                        display: flex;
+                        width: 100%;
+
+                        &.closed {
+                            opacity: .5;
+                        }
+
+                        .scheduleItem1{
+                            justify-content: flex-start;
+                            align-items: center;
+                            display: flex;
+
+                            .scheduleIcon {
+                                justify-content: center;
+                                align-items: center;
+                                margin-left: -8px;
+                                display: flex;
+                            }
+
+                            .scheduleDate {
+                                margin: 0 0 0 4px;
+                                font-weight: 500;
+                                color: $white_01;
+                                font-size: $f5;
+                            }
+                        }
+
+                        .scheduleTime {
+                            font-weight: 700;
+                            color: $white_01;
+                            font-size: $f5;
+                            margin: 0;
+
+                            &.closed {
+                                color: $red_01;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            #contact {
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: 32px;
+                padding: 0 32px;
+                display: flex;
+
+                h3 {
+                    font-weight: 500;
+                    margin: 0 0 12px;
+                    color: $white_01;
+                    font-size: $f3;
+                }
+
+                #itemsContainer {
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    align-items: center;
+                    display: flex;
+                    width: 100%;
+                    gap: 4px;
+
+                    .contactItem {
+                        justify-content: space-between;
+                        align-items: center;
+                        display: flex;
+                        width: 100%;
+
+                        .contactItem1{
+                            justify-content: flex-start;
+                            align-items: center;
+                            display: flex;
+
+                            .calendarIcon {
+                                justify-content: center;
+                                align-items: center;
+                                margin-left: -8px;
+                                display: flex;
+                            }
+
+                            .contactItemType {
+                                margin: 0 0 0 4px;
+                                font-weight: 500;
+                                color: $white_01;
+                                font-size: $f5;
+                            }
+                        }
+
+                        .contactItemValue {
+                            font-weight: 700;
+                            color: $blue_01;
+                            font-size: $f5;
+                            margin: 0;
+                        }
+                    }
+                }
+
+                #contactLinkContainer {
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 24px;
+                    display: flex;
+                    width: 100%;
+                    gap: 4px;
+
+                    .contactLinkItem {
+                        background-color: $black_02;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 50%;
+                        display: flex;
+                        height: 42px;
+                        width: 42px;
+                    }
+                }
+
+                h5 {
+                    margin: 32px 0 0;
+                    font-weight: 500;
+                    color: $gray_01;
+                    font-size: $f5;
+                }
+            }
+        }
+    }
+}

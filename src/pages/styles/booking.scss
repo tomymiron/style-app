@@ -1,0 +1,493 @@
+@import "../../theme.scss";
+
+#Booking {
+    // Default Styles -----
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    // Default Styles -----
+
+    background-color: $black_01;
+    flex-direction: row;
+    display: flex;
+
+    .backBtn {
+        background-color: $blue_01;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        height: 32px;
+        display: flex;
+        width: 32px;
+
+        div {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        &.invert {
+            background-color: $black_01;
+        }
+    }
+
+    .bookStep {
+        justify-content: flex-start;
+        padding: 32px 32px 64px;
+        align-items: flex-start;
+        flex-direction: column;
+        transition: left .4s;
+        position: relative;
+        min-width: 100vw;
+        display: flex;
+        width: 100%;
+
+        &.final {
+            background-color: $blue_01;
+        }
+
+        .activityIndicator {
+            background-color: $blue_01;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+            padding: 6px 12px;
+            margin-top: 24px;
+            display: flex;
+
+            h2 {
+                font-weight: 700;
+                color: $black_01;
+                font-size: $f6;
+                margin: 0;
+            }
+        }
+
+        h1 {
+            font-weight: 500;
+            color: $white_01;
+            font-size: $f3;
+            margin: 8px 0 0;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: $white_02;
+            font-size: $f5;
+            margin: 8px 0 0;
+        }
+
+        #locationText {
+            font-weight: 300;
+            color: $gray_01;
+            font-size: $f6;
+            margin: 0;
+        }
+
+        #inputContainer {
+            flex-direction: column;
+            margin-top: 6px;
+            display: flex;
+            width: 100%;
+            gap: 4px;
+
+            input, textarea {
+                background-color: $black_02;
+                border-radius: 6px;
+                font-weight: 400;
+                color: $white_01;
+                font-size: $f5;
+                padding: 12px;
+                outline: none;
+                border: none;
+                width: 100%;
+
+                &::placeholder {
+                    color: $gray_01;
+                }
+            }
+
+            textarea {
+                resize: none;
+                height: 90px;
+            }
+        }
+
+        h4 {
+            font-size: $f4;
+            font-weight: 400;
+            color: $white_01;
+            margin: 18px 0 0;
+
+            strong {
+                font-weight: 700;
+                color: $blue_01;
+            }
+        }
+
+        #successEndMessage {
+            position: absolute;
+            text-align: center;
+            color: $black_01;
+            font-weight: 500;
+            font-size: $f4;
+            padding: 32px;
+            bottom: 64px;
+            margin: 0;
+            left: 0;
+        }
+
+        h5 {
+            position: absolute;
+            text-align: center;
+            font-weight: 700;
+            color: $black_01;
+            padding: 0 32px;
+            font-size: $f1;
+            top: 35%;
+            left: 0;
+
+        }
+
+        #checkoutItemsContainer {
+            border: 1px solid $blue_03_15;
+            background-color: $black_02;
+            flex-direction: column;
+            border-radius: 6px;
+            margin-top: 8px;
+            padding: 12px;
+            display: flex;
+            width: 100%;
+
+            #checkoutItemsContainerTop {
+                flex-direction: column;
+                display: flex;
+                width: 100%;
+
+                .checkoutItem {
+                    justify-content: space-between;
+                    align-items: center;
+                    display: flex;
+
+                    .checkoutItemLeft {
+                        display: flex;
+
+                        div {
+                            flex-direction: column;
+                            display: flex;
+                            
+                            .checkoutItemTitle {
+                                font-weight: 500;
+                                color: $white_01;
+                                font-size: $f5;
+                                margin: 0;
+                            }
+                            .checkoutItemTime {
+                                font-weight: 300;
+                                color: $white_02;
+                                font-size: $f7;
+                                margin: 0;
+                            }
+                        }
+                    }
+
+                    .checkoutItemPrice {
+                        font-weight: 700;
+                        color: $blue_01;
+                        font-size: $f5;
+                        margin: 0;
+                    }
+                }
+            }
+
+            #checkoutItemsContainerBottom {
+                justify-content: space-between;
+                background-color: $blue_01;
+                align-items: center;
+                border-radius: 6px;
+                margin-top: 12px;
+                padding: 12px;
+                display: flex;
+
+                p {
+                    font-weight: 700;
+                    color: $black_01;
+                    font-size: $f5;
+                    margin: 0;
+                }
+            }
+        }
+
+        #serviceSelect {
+            margin-top: 32px;
+            flex-wrap: wrap;
+            display: flex;
+            width: 100%;
+            gap: 12px;
+
+            .serviceSelectItem {
+                background-color: $black_02;
+                box-sizing: border-box;
+                width: calc(50% - 6px);
+                flex-direction: column;
+                align-items: flex-start;
+                border-radius: 12px;
+                position: relative;
+                outline: none;
+                padding: 16px;
+                border: none;
+                display: flex; 
+
+                .serviceSelectItemTitle {
+                    font-weight: 500;
+                    text-align: left;
+                    color: $white_01;
+                    font-size: $f4;
+                    margin: 0;
+                }
+                .serviceSelectItemPrice {
+                    margin: 12px 0 4px;
+                    font-weight: 800;
+                    color: $blue_01;
+                    font-size: $f3;
+                }
+                .serviceSelectItemTime {
+                    font-weight: 500;
+                    color: $gray_01;
+                    font-size: $f5;
+                    margin: 0;
+                }
+
+                .serviceSelectItemIcon {
+                    position: absolute;
+                    bottom: 4px;
+                    right: 8px;
+                }
+
+                &.active {
+                    background-color: $blue_01;
+
+                    .serviceSelectItemTitle {
+                        color: $black_01;
+                    }
+
+                    .serviceSelectItemPrice {
+                        color: $black_01;
+                    }
+                    
+                    .serviceSelectItemTime {
+                        color: $black_01;
+                    }
+                }
+            }
+        }
+
+        #dateSelectContainer {
+            justify-content: space-between;
+            width: calc(100% + 48px);
+            margin: 24px 0 0 -24px;
+            align-items: center;
+            flex-direction: row;
+            display: flex;
+
+            #dateSelectBackBtn {
+                background-color: transparent;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                display: flex;
+                border: none;
+                padding: 0;
+            }
+            #dateSelectNextBtn {
+                background-color: transparent;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                display: flex;
+                border: none;
+                padding: 0;
+            }
+
+            #dateSelect {
+                border-radius: 12px;
+                border-bottom-right-radius: 32px;
+                border-bottom-left-radius: 32px;
+                flex-direction: column;
+                overflow: hidden;
+                display: flex;
+                flex: 1;
+
+
+                #dateSelectTop {
+                    justify-content: space-between;
+                    background-color: $blue_01;
+                    flex-direction: row;
+                    display: flex;
+                    padding: 8px;
+
+                    p {
+                        width: calc(100% / 6);
+                        text-align: center;
+                        font-weight: 500;
+                        color: $black_01;
+                        font-size: $f7;
+                        margin: 0;
+                    }
+                }
+
+                #dateSelectBody {
+                    justify-content: space-between;
+                    background-color: $black_02;;
+                    padding: 12px 8px 8px;
+                    flex-direction: row;
+                    display: flex;
+                    gap: 4px;
+
+                    .dateSelectItem {
+                        border: 1px solid $blue_03_15;
+                        background-color: transparent;
+                        justify-content: flex-start;
+                        flex-direction: column;
+                        width: calc(100% / 6);
+                        padding: 12px 0 22px;
+                        align-items: center;
+                        border-radius: 4px;
+                        outline: none;
+                        display: flex;
+                        height: 100%;
+
+                        &.start {
+                            border-bottom-left-radius: 24px;
+                        }
+
+                        &.end {
+                            border-bottom-right-radius: 24px;
+                        } 
+
+                        .dateSelectItemDate {
+                            font-weight: 700;
+                            color: $white_01;
+                            font-size: $f4;
+                            margin: 0;
+                        }
+                        .dateSelectItemMonth {
+                            font-weight: 700;
+                            color: $white_02;
+                            font-size: $f7;
+                            margin: 0;
+                        }
+
+                        &.selected {
+                            background-color: $blue_01;
+
+                            .dateSelectItemDate, .dateSelectItemMonth {
+                                color: $black_01;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #timeSelect {
+            border: 1px solid $blue_03_15;
+            justify-content: flex-start;
+            height: calc(100% - 370px);
+            flex-direction: column;
+            align-items: center;
+            border-radius: 12px;
+            overflow-y: scroll;
+            margin-top: 32px;
+            padding: 8px;
+            display: flex;
+            width: 100%;
+            gap: 4px;
+
+            .timeSelectItem {
+                background-color: $black_02;
+                border-radius: 4px;
+                outline: none;
+                display: flex;
+                padding: 8px;
+                border: none;
+                width: 100%;
+
+                .timeSelectItemTime {
+                    font-weight: 500;
+                    color: $white_01;
+                    font-size: 14px;
+                    margin: 0;
+                }
+
+                &.selected {
+                    background-color: $blue_01;
+
+                    .timeSelectItemTime {
+                        color: $black_01;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    #continueBtn {
+        justify-content: space-between;
+        background-color: $blue_01;
+        width: calc(100% - 64px);
+        align-items: center;
+        flex-direction: row;
+        border-radius: 6px;
+        padding: 16px 12px;
+        position: fixed;
+        outline: none;
+        display: flex;
+        border: none;
+        bottom: 32px;
+        left: 32px;
+
+        #continueBtn1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            #continueBtnTotal {
+                color: $black_01;
+                font-weight: 400;
+                font-size: $f4;
+                margin: 0;
+            }
+            #continueBtnServices {
+                color: $black_01;
+                font-weight: 700;
+                font-size: $f6;
+                margin: 0;
+            }
+        }
+
+        #continueBtn2 {
+            justify-content: flex-end;
+            align-items: center;
+            display: flex;
+
+            p {
+                font-weight: 600;
+                color: $black_01;
+                font-size: $f6;
+                margin: 0;
+            }
+        }
+
+        &.hiden {
+            opacity: 0;
+        }
+    }
+}
